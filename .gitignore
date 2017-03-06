@@ -1,2 +1,8 @@
-node_modules/
-.idea/
+# Logs
+logs
+*.log
+
+# Dependencias
+node_modules
+
+.idea
