@@ -12,6 +12,11 @@ const anuncioSchema = mongoose.Schema({
     tags: [String]
 });
 
+// ponemos un método al schema
+anuncioSchema.statics.list = function (callBack) {
+    Anuncio.find().exec(callBack);
+};
+
 // Creación del modelo
 
 var Anuncio = mongoose.model('Anuncio', anuncioSchema);
