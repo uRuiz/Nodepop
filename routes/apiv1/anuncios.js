@@ -6,6 +6,11 @@ const router = express.Router();
 const mongoose = require('mongoose');
 const Anuncio = mongoose.model('Anuncio');
 
+const jwtAuth = require('../../lib/jwtAuth');
+
+router.use(jwtAuth());
+
+// recuperar los anuncios
 router.get('/', function (req, res, next) {
 
     const venta = req.query.venta;
