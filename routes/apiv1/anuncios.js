@@ -18,8 +18,10 @@ router.get('/', function (req, res, next) {
 
 });
 
-router.get('/', function (req, res, next) {
-    res.json({success: true, })
+// recuperar la lista de tags permitidos
+router.get('/tags', function (req, res, next) {
+    res.json({success: true,  tagsPermitidos: Anuncio.tagsPermitidos()});
+
 });
 
 module.exports = router;

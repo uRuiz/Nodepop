@@ -2,6 +2,7 @@
 
 const express = require('express');
 const router = express.Router();
+
 const mongoose = require('mongoose');
 const Usuario = mongoose.model('Usuario');
 
@@ -12,7 +13,7 @@ router.get('/', function (req, res, next) {
 
 // crear un usuario
 
-router.post('/', function (req, res, next) {
+router.post('/register', function (req, res, next) {
    const usuario = new Usuario(req.body);
 
    usuario.save(function(err, usuarioCreado){

@@ -17,6 +17,11 @@ anuncioSchema.statics.list = function (callBack) {
     Anuncio.find().exec(callBack);
 };
 
+// Lista de tags permitidos
+anuncioSchema.statics.tagsPermitidos = function (callBack) {
+    return ['work', 'lifestyle', 'motor', 'mobile'];
+};
+
 // Creación del modelo
 
 var Anuncio = mongoose.model('Anuncio', anuncioSchema);
