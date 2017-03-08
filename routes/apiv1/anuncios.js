@@ -11,24 +11,31 @@ router.get('/', function (req, res, next) {
     const venta = req.query.venta;
     const tags = req.query.tags;
     const nombre = req.query.nombre;
+    const limit = parseInt(req.query.limit) || 30;
+    const skip = parseInt(req.query.skip) || 0;
+    const sort = req.query.sort;
 
     // creación de un filtro vacío
     const filter = {};
 
-    if (venta) {
+    if (typeof venta !== 'undefined') {
         filter.venta = venta;
     }
 
-    if (tags) {
+    if (typeof tags !== 'undefined') {
         filter.tags = tags;
     }
 
-    if (nombre) {
+    if (typeof nombre !== 'undefined') {
         filter.nombre = new RegExp('^' + nombre, 'i');
     }
 
+    if (typeof sort !== 'undefined') {
+        filter.sort = sort;
+    }
+
     // recuperar lista de anuncios
-    Anuncio.list(filter, function (err, docs) {
+    Anuncio.list(filter, limit, skip, sort, function (err, docs) {
         if (err) {
             next(err);
             return;

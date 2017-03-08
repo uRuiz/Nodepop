@@ -13,8 +13,12 @@ const anuncioSchema = mongoose.Schema({
 });
 
 // ponemos un método al schema
-anuncioSchema.statics.list = function (filter, callBack) {
-    Anuncio.find(filter).exec(callBack);
+anuncioSchema.statics.list = function (filter, limit, skip, sort, callBack) {
+    const query = Anuncio.find(filter);
+    query.limit(limit);
+    query.skip(skip);
+    query.sort(sort);
+    query.exec(callBack);
 };
 
 // Lista de tags permitidos
