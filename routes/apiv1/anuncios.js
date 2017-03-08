@@ -7,8 +7,28 @@ const mongoose = require('mongoose');
 const Anuncio = mongoose.model('Anuncio');
 
 router.get('/', function (req, res, next) {
+
+    const venta = req.query.venta;
+    const tags = req.query.tags;
+    const nombre = req.query.nombre;
+
+    // creación de un filtro vacío
+    const filter = {};
+
+    if (venta) {
+        filter.venta = venta;
+    }
+
+    if (tags) {
+        filter.tags = tags;
+    }
+
+    if (nombre) {
+        filter.nombre = new RegExp('^' + nombre, 'i');
+    }
+
     // recuperar lista de anuncios
-    Anuncio.list(function (err, docs) {
+    Anuncio.list(filter, function (err, docs) {
         if (err) {
             next(err);
             return;
