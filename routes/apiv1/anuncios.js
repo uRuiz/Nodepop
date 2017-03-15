@@ -19,6 +19,9 @@ router.get('/', function (req, res, next) {
     const limit = parseInt(req.query.limit) || 30;
     const skip = parseInt(req.query.skip) || 0;
     const sort = req.query.sort;
+    const minPrice = parseInt(req.query.minPrice);
+    const maxPrice = parseInt(req.querymaxPrice);
+
 
     // creación de un filtro vacío
     const filter = {};
@@ -37,6 +40,14 @@ router.get('/', function (req, res, next) {
 
     if (typeof sort !== 'undefined') {
         filter.sort = sort;
+    }
+
+    if (typeof minPrice !== 'undefined') {
+        filter.precio =  {$gte: minPrice};
+    }
+
+    if (typeof maxPrice !== 'undefined') {
+        filter.precio =  {$lte: maxPrice};
     }
 
     // recuperar lista de anuncios
