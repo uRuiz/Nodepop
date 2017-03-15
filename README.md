@@ -1,5 +1,6 @@
-# Nodepop API
-Práctica del módulo MEAN de Keepcoding I Web Development Master Bootcamp
+#Práctica MEAN
+
+## Nodepop API
 
 
 ## Requisitos de instalación
