@@ -27,16 +27,17 @@ Práctica del módulo MEAN de Keepcoding I Web Development Master Bootcamp
 
 - **Registro** (nombre, email, contraseña)
 
-    _http://localhost:3000/apiv1/usuarios_
+    POST _http://localhost:3000/apiv1/usuarios/register_
 
 - **Autenticación** (email, contraseña)
 
-    _http://localhost:3000/apiv1/usuarios/authenticate_
+    POST _http://localhost:3000/apiv1/usuarios/authenticate_
 
 - **Lista de anuncios** (paginada, con filtros de búsqueda)
 
-    _http://localhost:3000/apiv1/anuncios_ (Devuelve todos los anuncios)
-    _http://localhost:3000/apiv1/anuncios?tag=mobile&venta=true&nombre=iphone&limit=2&sort=precio&precio=-150 (Ejemplo de filtro)_
+    GET _http://localhost:3000/apiv1/anuncios_ (Devuelve todos los anuncios)
+    
+    GET _http://localhost:3000/apiv1/anuncios?tag=mobile&venta=true&nombre=iphone&limit=2&sort=precio&precio=-150 (Ejemplo de filtro)_
     
 
 - **Lista de tags existentes** (categorías de anuncios)
