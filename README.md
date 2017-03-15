@@ -27,7 +27,7 @@ Práctica del módulo MEAN de Keepcoding I Web Development Master Bootcamp
 
     POST _http://localhost:3000/apiv1/usuarios/register_
 
-- **Autenticación** (email, contraseña)
+- **Autenticación** (email, contraseña, token)
 
     POST _http://localhost:3000/apiv1/usuarios/authenticate_
 
