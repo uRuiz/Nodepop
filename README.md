@@ -20,9 +20,7 @@ Práctica del módulo MEAN de Keepcoding I Web Development Master Bootcamp
 	
 ## Arrancar aplicación
 	$ npm start
-	
-	La aplicación está configurara para arrancar en el puerto 3002. Si se desea utilizar otro puerto, puede configurrarse en el archivo _package.json_
-	
+		
 ## Servicios proporcionados por la API
 
 - **Registro** (nombre, email, contraseña)
